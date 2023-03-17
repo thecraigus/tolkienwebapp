@@ -1,0 +1,37 @@
+{{template "base"}}
+
+  <body class="flextest">
+   <div class="content">
+   <br>
+   <h1>You Searched For {{(index .CharResults2.Docs 0).Name}}</h1>
+   <div class="othernames">
+   <p>They are of the: {{(index .CharResults2.Docs 0).Race}} Race</p>
+   </div>
+   {{if .QuoteResults2}}
+   <p>They have also said the following Quotes</p>
+  <div>
+  <ul>
+   {{range .QuoteResults2.Docs}}
+    {{/* {{if gt (len .Dialog) 120}} */}}
+     <li>{{.Dialog}}</li>
+     <em>From The Film</em>: {{.MovieName}}
+     <br>
+     <br>
+    {{/* {{end}} */}}
+   {{end}}
+  </ul>
+   {{end}}
+  {{/* {{if .ArtefactResults}}
+  <p>They used the following effects</p>
+  <ul>
+   {{range .ArtefactResults}}
+   <li>{{.Name}}</li>
+   {{end}}
+  </ul>
+  {{end}} */}}
+   </div>
+  <a href="index.html">
+    <button class="buttontest">Home</button>
+  </a>
+  </body>
+</html>
